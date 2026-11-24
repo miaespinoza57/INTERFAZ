@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Galería: simulación (sin Arduino)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": ["--sim"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Galería: Arduino (puerto serie)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": ["--serial", "--port", "${input:puerto}"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "puerto",
+            "type": "promptString",
+            "description": "Puerto del Arduino (COM6 en Windows, /dev/ttyACM0 en Linux)",
+            "default": "COM6"
+        }
+    ]
+}
